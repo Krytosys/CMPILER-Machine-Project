@@ -388,7 +388,7 @@ return null;
         StatementController.getInstance().openConditionalCommand(ifCommand);
 
 
-        visitChildren(ctx);
+        visitChildren(ctx.block());
 
         StatementController.getInstance().compileControlledCommand();
 

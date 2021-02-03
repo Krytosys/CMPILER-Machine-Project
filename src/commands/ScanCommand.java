@@ -46,6 +46,7 @@ public class ScanCommand implements ICommand{
             System.out.println("Lemme Pause");
 
             Object x = editor.getInput();
+            System.out.println("CUrrent x" + x);
             clypsValue.setValue(x.toString());
         }
     }
