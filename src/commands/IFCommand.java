@@ -25,11 +25,12 @@ public class IFCommand implements ICommand, IConditionalCommand {
     @Override
     public void execute() {
         //this.identifyVariables();
-
+        List<Integer> dummy = null;
         //ExecutionMonitor Stuff
+        String newCondition = ClypsCustomVisitor.testingExpression(condExp.getText(), dummy, condExp.start.getLine());
 
         try {
-            if (ConditionEval.evaluateCondition(this.condExp)) {
+            if (ConditionEval.evaluateCondition(newCondition)) {
                 System.out.println("IF COMMAND RECEIVE TRUE");
                 for (ICommand command : this.posCommands) {
                     //executionMonitor.tryExecution()

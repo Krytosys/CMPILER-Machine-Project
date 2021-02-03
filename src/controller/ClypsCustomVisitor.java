@@ -587,10 +587,7 @@ public class ClypsCustomVisitor extends ClypsBaseVisitor<ClypsValue> {
 
 
         if(ctx.scanBlock().arrayCall() == null){
-            System.out.println("I got in1");
             visitChildren(ctx);
-            System.out.println("HELLO "+ ctx.scanBlock().StringLiteral().toString());
-            System.out.println("Hello " +ctx.scanBlock().scanExtra(0).Identifier().toString());
             ScanCommand scan = new ScanCommand(ctx.scanBlock().StringLiteral().toString(), ctx.scanBlock().scanExtra(0).Identifier().toString());
             scan.execute();
         }
